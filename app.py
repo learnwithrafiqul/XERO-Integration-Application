@@ -32,7 +32,6 @@ if app.config["ENV"] != "production":
 Session(app)
 
 # configure flask-oauthlib application
-# TODO fetch config from https://identity.xero.com/.well-known/openid-configuration #1
 oauth = OAuth(app)
 xero = oauth.remote_app(
     name="xero",
