@@ -298,8 +298,20 @@ def get_expense_claims():
     # print(code)
     sub_title = "Total expense claims found: {}".format(len(expense_claims.expense_claims))
 
+   
+    ## get dictionary keys
+
+
+    json_data = json.loads(code)
+    # print(json_data)
+    data = json_data['ExpenseClaims']
+    keys = data[0].keys()
+
+
+
+
     return render_template(
-        "code.html", title="Expense Claims", code=code, sub_title=sub_title
+        "table.html", title="Expense Claims", code=code,items=data,  headers=keys, sub_title=sub_title
     )
 
 
